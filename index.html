@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#8b62df"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Study Sidekick"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="logo.svg" type="image/svg+xml"><title>Study Sidekick</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Study Sidekick home"><img class="brand-logo" src="logo.svg" alt=""><span>study sidekick</span></a>
+      <button id="newChat" class="new-chat">＋ <span>New question</span></button>
+      <div class="side-label">YOUR SPACE</div>
+      <button class="side-link active" data-view="chat"><span>◌</span> Ask anything</button>
+      <button class="side-link" data-view="library"><span>▤</span> My creations</button>
+      <div class="sidebar-bottom"><div class="avatar">S</div><div><b>Study Sidekick</b><small>Ready when you are</small></div><span class="online"></span></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><button class="mobile-brand" id="mobileNew"><img src="logo.svg" alt=""> study sidekick</button><div class="top-actions"><span id="aiStatus" class="local-badge"><i></i> AI runs on your device</span></div></header>
+      <section id="chatView" class="chat-view">
+        <div class="welcome" id="welcome">
+          <img class="hero-logo" src="logo.svg" alt="Study Sidekick colorful open-book and star logo"><p class="eyebrow">YOUR FRIENDLY STUDY SPACE</p>
+          <h1>Your study sidekick.</h1><p class="subhead">Ask anything. Your private, on-device AI starts when you send your first message.</p>
+          <div class="suggestions">
+            <button data-mode="Explain"> <span>✧</span><b>Explain a topic</b><small>Make tricky things click</small></button>
+            <button data-prompt="Make me a quiz about the solar system"> <span>☷</span><b>Make a quiz</b><small>Practice what you know</small></button>
+            <button data-mode="Test paper"> <span>▤</span><b>Create a test paper</b><small>Get ready for test day</small></button>
+            <button data-mode="Wallpaper"> <span>▧</span><b>Make a wallpaper</b><small>Give your screen a refresh</small></button>
+          </div>
+        </div>
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <div class="composer-wrap"><div id="fileChip" class="file-chip hidden"></div><div class="composer">
+          <button id="attachBtn" class="attach" title="Attach notes or a picture" aria-label="Attach file">＋</button><input id="fileInput" type="file" accept=".txt,.md,.csv,.pdf,image/*" hidden>
+          <textarea id="prompt" rows="1" spellcheck="true" lang="en" placeholder="Ask anything · homework comes first"></textarea>
+          <select id="mode" aria-label="Choose a mode"><option>Ask anything</option><option>Explain</option><option>Quiz me</option><option>Flashcards</option><option>Study plan</option><option>Test paper</option><option>Wallpaper</option></select>
+          <button id="sendBtn" class="send" aria-label="Send">↑</button>
+        </div><div class="composer-note">Your notes stay in this browser. No account or API key needed.</div></div>
+      </section>
+      <section id="libraryView" class="panel-view hidden"><div class="panel-heading"><div><p class="eyebrow">YOUR WORK</p><h1>My creations</h1><p>Things you’ve made in this browser.</p></div><button id="clearLibrary" class="text-button">Clear all</button></div><div id="libraryList" class="library-list"></div></section>
+      <footer>Made for curious minds <span>✳</span></footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
